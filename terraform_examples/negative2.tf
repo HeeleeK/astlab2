@@ -107,6 +107,7 @@ resource "aws_lb_target_group_attachment" "attach32" {
 }
 
 resource "aws_instance" "inst32" {
+  associate_public_ip_address = false
   vpc_security_group_ids = [aws_default_security_group.dsg2.id]
   subnet_id = aws_subnet.subnet12.id
   ami = data.aws_ami.ubuntu2.id
